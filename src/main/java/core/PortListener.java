@@ -30,8 +30,8 @@ public class PortListener {
             Thread.sleep(1000); //sensor warm up
             while (serialPort.isOpened()) {
                 String serialPortData = serialPort.readString();
-                if (JsonHelper.isJsonValid(serialPortData)) {
-                    Telemetry telemetry = JsonHelper.fromJson(serialPortData, Telemetry.class);
+                if (JsonUtil.isJsonValid(serialPortData)) {
+                    Telemetry telemetry = JsonUtil.fromJson(serialPortData, Telemetry.class);
                     System.out.println(telemetry.toString());
                 }
                 Thread.sleep(LISTEN_PERIOD);
@@ -46,7 +46,6 @@ public class PortListener {
                 e.printStackTrace();
             }
         }
-
     }
 
     private String getAvailableUsbPort() {

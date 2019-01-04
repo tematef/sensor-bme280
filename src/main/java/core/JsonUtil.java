@@ -5,11 +5,11 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonParser;
 import com.google.gson.JsonSyntaxException;
 
-public class JsonHelper {
+public class JsonUtil {
 
     private static Gson gson = new GsonBuilder().create();
 
-    private JsonHelper() {}
+    private JsonUtil() {}
 
     public static <T> T fromJson(String json, Class<T> type) {
         return gson.fromJson(json, type);

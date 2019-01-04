@@ -23,6 +23,7 @@ public class FileUtil {
         if (!isFileExists(ABSOLUTE_PATH)) {
             try {
                 Files.createDirectory(Paths.get(ABSOLUTE_PATH));
+                Logger.out.info(String.format("Created %s folder", RESULTS_FOLDER));
             } catch (IOException e) {
                 throw new IllegalArgumentException("Could not create folder ", e);
             }
@@ -38,6 +39,7 @@ public class FileUtil {
                 return file;
             }
             file.createNewFile();
+            Logger.out.info(String.format("Created %s file", fileName));
             return file;
         } catch (IOException e) {
             throw new IllegalArgumentException(

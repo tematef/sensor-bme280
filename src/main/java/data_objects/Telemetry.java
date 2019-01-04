@@ -16,44 +16,51 @@ public class Telemetry {
         this.pressure = pressure;
     }
 
+    public Telemetry() {}
+
     public long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public Telemetry setId(long id) {
         this.id = id;
+        return this;
     }
 
     public long getMillis() {
         return millis;
     }
 
-    public void setMillis(long millis) {
+    public Telemetry setMillis(long millis) {
         this.millis = millis;
+        return this;
     }
 
     public double getTemperature() {
         return temperature;
     }
 
-    public void setTemperature(double temperature) {
+    public Telemetry setTemperature(double temperature) {
         this.temperature = temperature;
+        return this;
     }
 
     public double getHumidity() {
         return humidity;
     }
 
-    public void setHumidity(double humidity) {
+    public Telemetry setHumidity(double humidity) {
         this.humidity = humidity;
+        return this;
     }
 
     public double getPressure() {
         return pressure;
     }
 
-    public void setPressure(double pressure) {
+    public Telemetry setPressure(double pressure) {
         this.pressure = pressure;
+        return this;
     }
 
     @Override
