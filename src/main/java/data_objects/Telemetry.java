@@ -65,7 +65,7 @@ public class Telemetry {
 
     @Override
     public String toString() {
-        return "Telemetry{" +
+        return "{" +
                 "id=" + id +
                 ", millis=" + millis +
                 ", temperature=" + temperature +
