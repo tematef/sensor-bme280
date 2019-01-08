@@ -27,7 +27,7 @@ public class PortListener {
                     SerialPort.STOPBITS_1,
                     SerialPort.PARITY_NONE);
             serialPort.setFlowControlMode(SerialPort.FLOWCONTROL_RTSCTS_IN | SerialPort.FLOWCONTROL_RTSCTS_OUT);
-            Thread.sleep(1000); //sensor warm up
+            Thread.sleep(2000); //sensor warm up
             while (serialPort.isOpened()) {
                 String serialPortData = serialPort.readString();
                 if (JsonUtil.isJsonValid(serialPortData)) {
@@ -38,13 +38,7 @@ public class PortListener {
             }
 
         } catch (SerialPortException | InterruptedException e) {
-
-        } finally {
-            try {
-                serialPort.closePort();
-            } catch (SerialPortException e) {
-                e.printStackTrace();
-            }
+            Logger.out.error("Error occured while port listening {}", e);
         }
     }
 
